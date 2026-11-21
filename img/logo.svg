@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <clipPath id="squircle-clip">
+      <path d="M 256 16 C 362.5 16, 419.6 16, 457.8 54.2 C 496 92.4, 496 149.5, 496 256 C 496 362.5, 496 419.6, 457.8 457.8 C 419.6 496, 362.5 496, 256 496 C 149.5 496, 92.4 496, 54.2 457.8 C 16 419.6, 16 362.5, 16 256 C 16 149.5, 16 92.4, 54.2 54.2 C 92.4 16, 149.5 16, 256 16 Z" />
+    </clipPath>
+
+    <!-- Hook is visible everywhere outside the hole, and inside it only down to a curved end that follows the hole's perspective -->
+    <clipPath id="hook-end-clip">
+      <path d="M 127 185.6 L 171.8 235.34 A 13 3.2 48 0 0 189.2 254.66 L 234 304.4 L 382.6 170.6 L 275.6 51.8 Z" />
+    </clipPath>
+
+    <filter id="squircle-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffset" />
+      <feGaussianBlur stdDeviation="4" in="shadowOffset" result="shadowBlur" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.32 0" in="shadowBlur" result="shadowColor" />
+      <feMerge>
+        <feMergeNode in="shadowColor" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <linearGradient id="water-back-grad" x1="0" y1="315" x2="0" y2="496" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0088E8" />
+      <stop offset="100%" stop-color="#004482" />
+    </linearGradient>
+    <linearGradient id="water-front-grad" x1="0" y1="325" x2="0" y2="496" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#19BDFF" />
+      <stop offset="100%" stop-color="#0066B8" />
+    </linearGradient>
+  </defs>
+
+  <path id="squircle-bg" d="M 256 16 C 362.5 16, 419.6 16, 457.8 54.2 C 496 92.4, 496 149.5, 496 256 C 496 362.5, 496 419.6, 457.8 457.8 C 419.6 496, 362.5 496, 256 496 C 149.5 496, 92.4 496, 54.2 457.8 C 16 419.6, 16 362.5, 16 256 C 16 149.5, 16 92.4, 54.2 54.2 C 92.4 16, 149.5 16, 256 16 Z" fill="#0D1117" filter="url(#squircle-shadow)" />
+
+  <g id="icon-content" clip-path="url(#squircle-clip)">
+    <path id="water-back" d="M 16 338 C 90 302, 180 370, 280 334 C 370 302, 440 356, 496 326 L 496 496 L 16 496 Z" fill="url(#water-back-grad)" />
+
+    <g id="fish-shadow" transform="translate(342, 412) rotate(12) scale(1.20)" opacity="0.68">
+      <path d="M -76 -3 C -54 -22, -20 -26, 12 -18 L 26 -30 L 34 -14 Q 50 -10, 60 -6 L 88 -26 Q 78 -6, 74 0 Q 78 6, 88 26 L 60 6 Q 46 11, 28 16 L 34 25 L 18 18 C -12 24, -46 20, -68 7 L -56 2 Z" fill="#031D36" />
+      <path d="M -24 18 L -8 30 L -3 19 Z" fill="#031D36" />
+    </g>
+
+    <g id="hook-and-pawn">
+      <g id="fishing-line" fill="none" stroke-linecap="butt">
+        <line x1="374" y1="16" x2="374" y2="89" stroke="#FFFFFF" stroke-width="11" />
+        <line x1="374" y1="16" x2="374" y2="89" stroke="#0A0D12" stroke-width="4" />
+      </g>
+
+      <g id="welded-ring" fill="none">
+        <circle cx="374" cy="110" r="21" stroke="#FFFFFF" stroke-width="15" />
+        <circle cx="374" cy="110" r="21" stroke="#0A0D12" stroke-width="8.5" />
+        <path d="M 357 100 A 21 21 0 0 1 380 90" stroke="#4D5A6E" stroke-width="2.2" stroke-linecap="round" />
+      </g>
+
+      <g id="hook-body-back">
+        <path d="M 354 151 C 358 134, 365 113, 374 114 C 383 115, 378 138, 370 156 Q 349 245, 318 331 A 88.2 88.2 0 1 1 154 267 L 169 274 A 71.6 71.6 0 1 0 302 326 Q 333 240, 354 151 Z" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round" />
+        <path d="M 354 151 C 358 134, 365 113, 374 114 C 383 115, 378 138, 370 156 Q 349 245, 318 331 A 88.2 88.2 0 1 1 154 267 L 169 274 A 71.6 71.6 0 1 0 302 326 Q 333 240, 354 151 Z" fill="#0A0D12" />
+        <path d="M 366 136 Q 371 122, 375 119" fill="none" stroke="#4D5A6E" stroke-width="2.4" stroke-linecap="round" />
+        <path d="M 363 162 Q 342 246, 312 328 A 82.5 82.5 0 0 1 180 368" fill="none" stroke="#3D4859" stroke-width="3" stroke-linecap="round" />
+      </g>
+
+      <g id="pawn" transform="translate(172, 266) rotate(4) scale(0.90)">
+        <path id="pawn-base" d="M -19.29 28 A 34 34 0 1 1 19.29 28 L 42 43 Q 43.5 51, 39 58 L 19 58 C 19 88, 36 112, 57 129 C 67 137, 71 150, 69 164 Q 0 180, -69 164 C -71 150, -67 137, -57 129 C -36 112, -19 88, -19 58 L -39 58 Q -43.5 51, -42 43 Z" fill="#E8EEF5" />
+        <path id="pawn-shadow-head-collar" d="M 8.8 -32.84 A 34 34 0 0 1 19.29 28 L 42 43 Q 43.5 51, 39 58 L 16 58 Q 20 50, 18 43 L 3 28 C 22 14, 24 -16, 8.8 -32.84 Z" fill="#B3C0D1" />
+        <path id="pawn-shadow-body" d="M -19 58 L 19 58 C 19 88, 36 112, 57 129 C 67 137, 71 150, 69 164 Q 0 180, -69 164 C -69.9 157.7, -69.59 151.6, -68.05 146.07 Q -30 156, -9 152 C 3 150, 7 136, 10 116 C 13 94, 13 76, 4 72 Q -5 68.5, -19.71 68.54 C -19.24 65.11, -19 61.6, -19 58 Z" fill="#B3C0D1" />
+        <ellipse id="pawn-highlight" cx="-12" cy="-14" rx="11.5" ry="6.2" transform="rotate(-40 -12 -14)" fill="#FFFFFF" />
+        <path id="pawn-outline" d="M -19.29 28 A 34 34 0 1 1 19.29 28 L 42 43 Q 43.5 51, 39 58 L 19 58 C 19 88, 36 112, 57 129 C 67 137, 71 150, 69 164 Q 0 180, -69 164 C -71 150, -67 137, -57 129 C -36 112, -19 88, -19 58 L -39 58 Q -43.5 51, -42 43 Z" fill="none" stroke="#11161F" stroke-width="6.5" stroke-linejoin="round" />
+      </g>
+
+      <!-- Puncture hole: above the pawn, below the hook point -->
+      <ellipse id="pawn-puncture" cx="180.5" cy="245" rx="15.5" ry="7" transform="rotate(48 180.5 245)" fill="#11161F" stroke="#8FA0B8" stroke-width="1.8" stroke-opacity="0.9" />
+
+      <g id="hook-point-front" clip-path="url(#hook-end-clip)">
+        <path d="M 169.1 238.0 L 176.6 231.4 C 198.0 212.5, 230.0 197.2, 265.0 194.5 C 246.0 207.0, 232.0 220.0, 223.2 245.5 L 217.2 231.0 Q 207.5 239.5, 199.5 246.2 L 185.5 257.9 Z" fill="#FFFFFF" />
+        <path d="M 169.1 244.0 L 175.0 238.7 C 198.8 217.3, 227.5 203.5, 256.0 198.0 C 242.0 206.0, 228.0 216.0, 223.5 238.0 L 220.0 222.5 Q 203.0 237.5, 186.1 251.0 L 179.8 256.0 Z" fill="#0A0D12" />
+        <path d="M 181.5 237.5 C 202.0 219.5, 226.0 207.5, 245.5 201.4" fill="none" stroke="#5C6B82" stroke-width="2.2" stroke-linecap="round" />
+      </g>
+
+      <!-- Subtle contour where the hook enters the hole -->
+      <path id="hook-entry-contour" d="M 171.8 235.3 A 13 3.2 48 0 0 189.2 254.7" fill="none" stroke="#8FA0B8" stroke-width="0.8" stroke-linecap="butt" opacity="0.9" />
+    </g>
+
+    <g id="water-front">
+      <path d="M 16 350 C 110 384, 195 316, 305 348 C 395 374, 455 322, 496 344 L 496 496 L 16 496 Z" fill="url(#water-front-grad)" opacity="0.46" />
+      <path d="M 16 350 C 110 384, 195 316, 305 348 C 395 374, 455 322, 496 344" fill="none" stroke="#8BE6FF" stroke-width="4.5" opacity="0.82" />
+
+      <g fill="none" stroke-linecap="round">
+        <path d="M 48 392 Q 78 386, 108 394" stroke="#FFFFFF" stroke-width="4" opacity="0.55" />
+        <path d="M 248 446 Q 278 430, 306 420" stroke="#FFFFFF" stroke-width="4.5" opacity="0.5" />
+        <path d="M 412 386 Q 442 372, 474 374" stroke="#FFFFFF" stroke-width="4" opacity="0.55" />
+        <path d="M 78 456 Q 112 468, 146 462" stroke="#004C8C" stroke-width="9" opacity="0.35" />
+      </g>
+
+      <g id="bubbles" fill="#E6FAFF" stroke="#FFFFFF" stroke-width="1.5">
+        <circle cx="82" cy="436" r="7" fill-opacity="0.22" stroke-opacity="0.7" />
+        <circle cx="70" cy="416" r="4" fill-opacity="0.28" stroke-opacity="0.75" />
+        <circle cx="294" cy="392" r="5.5" fill-opacity="0.22" stroke-opacity="0.7" />
+        <circle cx="312" cy="374" r="3.5" fill-opacity="0.3" stroke-opacity="0.75" />
+        <circle cx="448" cy="412" r="6" fill-opacity="0.2" stroke-opacity="0.65" />
+      </g>
+    </g>
+  </g>
+</svg>
